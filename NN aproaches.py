@@ -81,7 +81,6 @@ max_length_sentence = 150
 tokenizer = Tokenizer(num_words=vocabulary_size, oov_token='OOV', lower=True, filters='!"#$%&()*+,-./:;<=>?@[\\]^_`{|}~\t\n')
 tokenizer.fit_on_texts(df_train['Content'])
 df_train['Content'] = tokenizer.texts_to_sequences(df_train['Content'])
-
 padding_train_sentences = pad_sequences(df_train['Content'], maxlen= max_length_sentence, truncating= 'post', padding= 'post')
 df_valid['Content'] = tokenizer.texts_to_sequences(df_valid['Content'])
 padding_valid_sentences = pad_sequences(df_valid['Content'], maxlen= max_length_sentence, truncating= 'post', padding= 'post')
@@ -95,7 +94,6 @@ outputs = Dense(3, activation='softmax')(x)
 model = Model(inputs=inputs, outputs=outputs)
 model.compile(optimizer='adam', loss="categorical_crossentropy", metrics=["accuracy"])
 model.summary()
-
 history = model.fit(padding_train_sentences, train_label, epochs=15, batch_size=32, validation_data=(padding_valid_sentences, valid_label))
 
 # Plot training & validation loss
