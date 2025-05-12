@@ -1,6 +1,5 @@
 # Twitter-Sentiment-Analysis
 
-Overview
 In this project, I explored various text classification techniques using multiple datasets, with a primary focus on a Twitter dataset. The task was approached in two main ways:
 
 ## **Classical Machine Learning Models:**
