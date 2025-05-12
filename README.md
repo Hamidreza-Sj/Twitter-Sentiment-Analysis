@@ -18,5 +18,6 @@ I implemented and compared several traditional ML algorithms, including:
 
 - **LightGBM**
 
+
 Neural Network Approach:
 I also developed a neural network model to tackle the same classification task, aiming to compare its performance against the classical methods.
